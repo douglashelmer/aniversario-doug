@@ -9,16 +9,7 @@ import {
   Cake,
   CheckCircle2,
   Clock,
-  Code,
-  Layers,
-  Package,
-  Play,
   Shield,
-  Sparkles,
-  Star,
-  TrendingUp,
-  Video,
-  Zap,
 } from "lucide-react";
 
 const CHECKOUT_URL = "https://payfast.greenn.com.br/9sfpy3h/offer/AZRXKp?ch_id=140313";
@@ -54,18 +45,30 @@ function useFadeUp() {
 }
 
 const COURSES = [
-  { name: "nexIA Image", desc: "Gere imagens com IA diretamente no Blender", icon: Sparkles },
-  { name: "Web IA", desc: "Crie páginas completas com IA, sem programar", icon: Code },
-  { name: "Formação 3D PRO", desc: "3D profissional do zero ao avançado no Blender", icon: Layers },
-  { name: "Formação IA PRO", desc: "Imagens de produto em menos de 5 minutos com IA", icon: Zap },
-  { name: "Freela 3D PRO", desc: "Como conseguir seus primeiros clientes de 3D freelancer", icon: TrendingUp },
-  { name: "PS.Express", desc: "Entrada rápida no mercado 3D profissional", icon: Star },
-  { name: "Gravação Imersão IA PRO", desc: "Gravação completa da Imersão IA PRO ao vivo", icon: Video },
-  { name: "Modelos 3D PRO", desc: "Mais de 300 modelos FBX prontos para usar", icon: Package },
-  { name: "Primeira Venda com IA em 7 Dias", desc: "Plano de ação + scripts para vender com IA", icon: TrendingUp },
-  { name: "MasterClass Prospecção e Precificação", desc: "Estratégias de precificação e captação de clientes", icon: BookOpen },
-  { name: "Logo Express", desc: "Criação profissional de logos com IA", icon: Sparkles },
-  { name: "ADSmaker by nexIA", desc: "Anúncios profissionais em minutos com nexIA", icon: Play },
+  { name: "Web.IA", img: "/courses/c00.webp" },
+  { name: "nexIA Image", img: "/courses/c01.webp" },
+  { name: "Formação 3D PRO", img: "/courses/c02.webp" },
+  { name: "Formação IAPRO.BLEND", img: "/courses/c03.webp" },
+  { name: "Freela3D PRO", img: "/courses/c04.webp" },
+  { name: "PS.Express", img: "/courses/c05.webp" },
+  { name: "Gravação Imersão IA PRO", img: "/courses/c06.webp" },
+  { name: "Modelos 3D PRO", img: "/courses/c07.webp" },
+  { name: "Primeira Venda com IA em 7 Dias", img: "/courses/c08.webp" },
+  { name: "MasterClass Prospecção e Precificação", img: "/courses/c09.webp" },
+  { name: "Logo Express", img: "/courses/c10.webp" },
+  { name: "ADSmaker by nexIA", img: "/courses/c11.webp" },
+  { name: "Gravação Workshop IAPRO.BLEND", img: "/courses/c12.webp" },
+  { name: "Bastidor Criativo", img: "/courses/c13.webp" },
+  { name: "Workshop Imersão 3D+IA com Blender", img: "/courses/c14.webp" },
+  { name: "500+ Prompts Ensaio Feminino e Masculino", img: "/courses/c15.webp" },
+  { name: "500+ Prompts Produtos Variados", img: "/courses/c16.webp" },
+  { name: "Seedance 2.0 — 50 Prompts de Vídeo", img: "/courses/c17.webp" },
+  { name: "Gravação Workshop 3D+IA (16/05/26)", img: "/courses/c18.webp" },
+  { name: "Nano Banana + Blender 3D", img: "/courses/c19.webp" },
+  { name: "nexIA Video Studio + VEO 3.1", img: "/courses/c20.webp" },
+  { name: "nexIA Retopology", img: "/courses/c21.webp" },
+  { name: "Comece por aqui", img: "/courses/c22.webp" },
+  { name: "Packing Skills — IAPRO.BLEND", img: "/courses/c23.webp" },
 ];
 
 const FAQS = [
@@ -272,39 +275,28 @@ export default function Page() {
               </p>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {COURSES.map((course, i) => (
                 <motion.div
                   key={course.name}
                   {...fade}
-                  transition={{ delay: i * 0.04, duration: 0.5 }}
-                  className="bg-bg-card border border-white/8 rounded-xl p-5 hover:border-accent/30 transition-colors group"
+                  transition={{ delay: i * 0.03, duration: 0.5 }}
+                  className="bg-bg-card border border-white/8 rounded-xl overflow-hidden hover:border-accent/30 transition-colors group"
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                      <course.icon className="w-4 h-4 text-accent" aria-hidden="true" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-sm text-ink mb-1 leading-snug">{course.name}</h3>
-                      <p className="text-xs text-ink-dim leading-relaxed">{course.desc}</p>
-                    </div>
+                  <div className="relative aspect-video">
+                    <Image
+                      src={course.img}
+                      alt={course.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
+                  </div>
+                  <div className="px-3 py-2.5">
+                    <h3 className="font-semibold text-xs text-ink leading-snug">{course.name}</h3>
                   </div>
                 </motion.div>
               ))}
-
-              {/* +11 extras */}
-              <motion.div
-                {...fade}
-                transition={{ delay: 12 * 0.04, duration: 0.5 }}
-                className="bg-accent/5 border border-accent/20 rounded-xl p-5 flex items-center justify-center text-center"
-              >
-                <div>
-                  <div className="text-3xl font-bold text-accent mb-1">+11</div>
-                  <div className="text-xs text-ink-dim leading-relaxed">
-                    workshops, coleções de prompts<br />e addons para Blender
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </div>
         </section>
