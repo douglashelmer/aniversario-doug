@@ -101,38 +101,9 @@ export default function Page() {
 
   return (
     <>
-      {/* Barra vermelha de urgência — fixada no topo absoluto */}
-      <div className="fixed top-0 inset-x-0 z-[70] bg-red-600 text-white">
-        <a
-          href={CHECKOUT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-3 px-4 py-2 hover:bg-red-700 transition-colors"
-        >
-          <span className="text-xs md:text-sm font-bold tracking-wide uppercase">
-            🎂 Se você perder isso, você é mais louco que eu
-          </span>
-          <span className="hidden md:flex items-center gap-1 text-xs font-mono font-bold tabular-nums bg-red-800/60 px-2 py-0.5 rounded"
-            aria-live="polite"
-            suppressHydrationWarning
-          >
-            {countdown.mounted ? (
-              <>
-                {String(countdown.hours).padStart(2, "0")}h:
-                {String(countdown.minutes).padStart(2, "0")}m:
-                <span className="text-yellow-300">{String(countdown.seconds).padStart(2, "0")}s</span>
-              </>
-            ) : (
-              <span className="opacity-0">--h:--m:--s</span>
-            )}
-          </span>
-          <ArrowRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-        </a>
-      </div>
-
       <main>
         {/* Hero */}
-        <section className="relative pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden">
+        <section className="relative pt-12 pb-24 md:pt-16 md:pb-32 overflow-hidden">
           {/* Imagem de fundo — portrait no mobile, landscape no desktop */}
           <div className="absolute inset-0 md:hidden">
             <Image
