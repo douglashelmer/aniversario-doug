@@ -133,10 +133,20 @@ export default function Page() {
       <main>
         {/* Hero */}
         <section className="relative pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden">
-          {/* Imagem de fundo */}
-          <div className="absolute inset-0">
+          {/* Imagem de fundo — portrait no mobile, landscape no desktop */}
+          <div className="absolute inset-0 md:hidden">
             <Image
-              src="/hero.png"
+              src="/hero-portrait.webp"
+              alt=""
+              fill
+              className="object-cover object-top"
+              priority
+              sizes="100vw"
+            />
+          </div>
+          <div className="absolute inset-0 hidden md:block">
+            <Image
+              src="/hero.webp"
               alt=""
               fill
               className="object-cover object-center"
