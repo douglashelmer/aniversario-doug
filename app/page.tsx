@@ -110,7 +110,7 @@ export default function Page() {
           className="flex items-center justify-center gap-3 px-4 py-2 hover:bg-red-700 transition-colors"
         >
           <span className="text-xs md:text-sm font-bold tracking-wide uppercase">
-            🎂 Se você perder isso, você é mais doido que eu
+            🎂 Se você perder isso, você é mais louco que eu
           </span>
           <span className="hidden md:flex items-center gap-1 text-xs font-mono font-bold tabular-nums bg-red-800/60 px-2 py-0.5 rounded"
             aria-live="polite"
@@ -171,10 +171,8 @@ export default function Page() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.02] mb-6 text-balance max-w-2xl"
             >
-              23 cursos.{" "}
-              <span className="text-gradient">R$ 197.</span>
-              <br />
-              Só hoje.
+              Se você perder isso,{" "}
+              <span className="text-gradient">você é mais louco que eu.</span>
             </motion.h1>
 
             {/* Subhead */}
@@ -184,8 +182,8 @@ export default function Page() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="text-lg md:text-xl text-ink-dim max-w-xl mb-10 leading-relaxed"
             >
-              Toda a minha plataforma — 3D, IA, freela, anúncios, prompts — por um preço
-              que só existe uma vez por ano. No meu aniversário. Amanhã não tem mais.
+              Toda a minha plataforma liberada. 3D, IA, freela, anúncios, prompts — por um preço
+              que só existe hoje, dia 20/06/2026. No meu aniversário. Encerra à meia-noite.
             </motion.p>
 
             {/* CTA + trust */}
